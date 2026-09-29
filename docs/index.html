@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>眼不见心不烦（新浪微博）MV3 移植版 — 让经典微博过滤扩展继续活下去</title>
+<meta name="description" content="田生（tiansh）开发的经典微博过滤扩展「眼不见心不烦」的 Manifest V3 移植版。商店版已被 MV2 淘汰停用，本仓库以 MPL-2.0 合规方式重打包，原代码零修改，规则设置无缝延续。">
+<style>
+  :root{--orange:#f58220;--ink:#17181c;--ink2:#3c3f45;--bg:#fff;--bg2:#f6f7f9;--line:#e8eaee;--green:#18a058}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg)}
+  a{color:var(--orange);text-decoration:none}
+  .container{max-width:1020px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:10}
+  .nav-inner{display:flex;align-items:center;height:60px;gap:22px}
+  .logo{font-weight:700;display:flex;gap:10px;align-items:center}
+  .logo .box{width:26px;height:26px;border-radius:7px;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:13px}
+  .links{margin-left:auto;display:flex;gap:18px;font-size:14px}
+  .links a{color:var(--ink2)}
+  .hero{background:linear-gradient(180deg,#fff4ea,#fff);padding:80px 0 64px;text-align:center}
+  .badge{display:inline-block;background:#ffedd9;color:#d96e12;border-radius:20px;padding:5px 16px;font-size:13px;margin-bottom:20px}
+  h1{font-size:40px;letter-spacing:-.5px}
+  h1 .hl{color:var(--orange)}
+  .sub{max-width:620px;margin:16px auto 0;color:var(--ink2);font-size:17px}
+  .cta{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{padding:12px 26px;border-radius:12px;font-weight:600;font-size:15px}
+  .btn.primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(245,130,32,.35)}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .meta{margin-top:24px;color:#9a9ca3;font-size:13px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  section{padding:60px 0}
+  .alt{background:var(--bg2)}
+  h2{font-size:28px;text-align:center}
+  .sub2{text-align:center;color:var(--ink2);margin:10px auto 36px;max-width:560px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{font-size:15px;margin-bottom:8px}
+  .card p{font-size:13.5px;color:var(--ink2)}
+  .steps{max-width:640px;margin:0 auto;counter-reset:s}
+  .step{display:flex;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line)}
+  .step:last-child{border:0}
+  .step::before{counter-increment:s;content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:700}
+  .legal{max-width:720px;margin:0 auto;background:#fff;border-left:4px solid var(--green);border-radius:0 12px 12px 0;padding:18px 22px;font-size:14px;color:var(--ink2)}
+  footer{background:var(--ink);color:#9a9ca3;padding:34px 0;font-size:13px;margin-top:60px}
+  footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:#d6d7da}
+  @media(max-width:800px){.cols{grid-template-columns:1fr}h1{font-size:30px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo"><span class="box">净</span>眼不见心不烦 · MV3 移植版</div>
+    <div class="links"><a href="#intro">介绍</a><a href="#install">安装</a><a href="#legal">许可</a><a href="https://github.com/poboll/weibo-cleaner-mv3">GitHub</a></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="badge">原代码零修改 · MPL-2.0 合规移植 · 规则设置无缝延续</span>
+    <h1>让经典微博过滤扩展，<span class="hl">在 MV3 时代继续活着</span></h1>
+    <p class="sub">Chrome 淘汰 Manifest V2，商店版「眼不见心不烦（新浪微博）」2.6.1 被强制停用且包已下架。本仓库以 Manifest V3 标准重新打包，装上即用。</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/poboll/weibo-cleaner-mv3/releases/latest">⬇ 下载最新版</a>
+      <a class="btn ghost" href="https://github.com/tiansh/yawf">致敬上游 tiansh/yawf</a>
+    </div>
+    <div class="meta"><span>Chrome / Arc / Edge 等 Chromium 浏览器</span><span>·</span><span>原 ID 移植，旧规则自动延续</span></div>
+  </div>
+</header>
+
+<section id="intro" class="alt">
+  <div class="container">
+    <h2>它还是那个「眼不见心不烦」</h2>
+    <p class="sub2">过滤逻辑一行未改，全部能力与 2020 年的 2.6.1 一致。</p>
+    <div class="cols">
+      <div class="card"><h3>🚫 深度屏蔽</h3><p>关键词、用户、来源、链接微博与正则匹配，把时间线上一切你不愿看到的内容清出去。</p></div>
+      <div class="card"><h3>🧹 版面净化</h3><p>隐藏广告、推荐与热门模块，还你一条干净的信息流。</p></div>
+      <div class="card"><h3>🎛 可视化规则</h3><p>扩展设置页逐项配置，规则支持导入导出；本移植版沿用原扩展 ID，旧规则自动回归。</p></div>
+      <div class="card"><h3>🧬 MV3 合规</h3><p>仅重写打包清单：Manifest 2→3、补充搜索页匹配、document_start 注入；脚本本体零修改。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="container">
+    <h2>一分钟安装</h2>
+    <p class="sub2">与所有解压式扩展相同的安装流程。</p>
+    <div class="steps">
+      <div class="step"><b>下载解压</b><span>到 <a href="https://github.com/poboll/weibo-cleaner-mv3/releases/latest">Releases</a> 下载 zip，解压到长期保留的目录。</span></div>
+      <div class="step"><b>打开扩展管理页</b><span>地址栏输入 <code>chrome://extensions</code>，打开「开发者模式」。</span></div>
+      <div class="step"><b>加载扩展</b><span>点「加载已解压的扩展程序」，选择解压出的文件夹。</span></div>
+      <div class="step"><b>打开微博</b><span>进入 weibo.com，在扩展设置里配置你的过滤规则，或者什么也不用做——旧规则会自动回来。</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="legal" class="alt">
+  <div class="container">
+    <h2>许可与署名</h2>
+    <p class="sub2">尊重原作者，是这类移植能够成立的前提。</p>
+    <div class="legal">
+      过滤逻辑代码 <b>weiboCleaner.js</b> 由 <b>田生（@tiansh）</b> 创作，其用户脚本头部声明
+      <b>MPL-2.0</b> 许可证。本仓库依 MPL-2.0 发布该文件（未做任何修改），并在
+      <a href="https://github.com/poboll/weibo-cleaner-mv3/blob/main/NOTICE.md">NOTICE.md</a>
+      中依第 3 条要求完整说明了全部变更（仅 manifest 清单重写）。
+      本仓库与原作者无隶属关系；如原作者有任何要求，将第一时间配合处理。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>眼不见心不烦（新浪微博）MV3 移植版 · MPL-2.0 · 原作 © 田生（tiansh）</div>
+    <div><a href="https://github.com/poboll/weibo-cleaner-mv3">GitHub</a> · <a href="https://github.com/tiansh/yawf">上游项目</a> · <a href="https://github.com/poboll/weibo-cleaner-mv3/releases">Releases</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "眼不见心不烦（新浪微博）MV3",
+  "version": "2.6.2",
+  "description": "新浪微博非官方功能增强插件（MV3 改造版，原码 2.6.1）",
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCKkMPfXT0oqQRRHwGp/1vwWCLh0obGwTVgdRKYR24GRA6n7vkGGuv2kvH+RKuUZelmeWDfnMm3yYI9jS1M5Zt+oDQZDXrK5IOFs3dTDjys1/FoPjPGvAYeGPkjzqe/eO4CzVgiiMrQUZDHxRTNzJR30izDuWv9q8tn/l/7EUekAwIDAQAB",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://weibo.com/*",
+    "https://www.weibo.com/*",
+    "https://d.weibo.com/*",
+    "https://s.weibo.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://weibo.com/*",
+        "https://www.weibo.com/*",
+        "https://d.weibo.com/*",
+        "https://s.weibo.com/*"
+      ],
+      "js": [
+        "weiboCleaner.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
