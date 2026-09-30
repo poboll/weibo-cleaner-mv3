@@ -85,7 +85,7 @@ Firefox 至今完整支持 Manifest V2，直接寻找旧版安装即可；或同
 ## 🙏 致谢
 
 - **田生（[@tiansh](https://github.com/tiansh)）** 与 [tiansh/yawf](https://github.com/tiansh/yawf) 社区 —— 一切过滤逻辑的创造者
-- 本仓库的 MV3 清单改造由 [xiaoshenming](https://github.com/poboll) 完成
+- 本仓库的 MV3 清单改造由 [poboll](https://github.com/poboll) 完成
 
 ## 📄 许可证
 
