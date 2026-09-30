@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src="docs/social-preview.png" alt="眼不见心不烦 MV3" width="640">
+
 **让经典的微博过滤扩展在 Manifest V3 时代继续活下去**
 
 [![Version](https://img.shields.io/badge/version-2.6.1--mv3-f58220.svg)](#-变更说明)
