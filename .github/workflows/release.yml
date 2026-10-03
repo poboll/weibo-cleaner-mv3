@@ -1,0 +1,24 @@
+name: Build & Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pack extension zip
+        run: |
+          zip -r "weibo-cleaner-mv3-${GITHUB_REF_NAME}.zip" . \
+            -x ".git/*" -x "docs/*" -x "*.zip"
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: weibo-cleaner-mv3-${{ github.ref_name }}.zip
+          generate_release_notes: true
